@@ -1,0 +1,7 @@
+
+ws_	基本类型
+wsi	接口		has a sIID
+wsc	类
+wsu	工具类
+wse	异常及错误	has a sSTR
+wso	组件		has a sCID
