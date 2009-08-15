@@ -1,0 +1,202 @@
+========================================
+case:StringTest - begin
+    --------------------------------    
+func:test_wsString - begin
+func:test_wsString - end
+    --------------------------------    
+    --------------------------------    
+func:test_wsLong_ToString - begin
+ws_long        [wsString]
+-1        [-1]
+0        [0]
+1        [1]
+2147483647        [2147483647]
+-2147483647        [-2147483647]
+2147483647        [2147483647]
+0        [0]
+0        [0]
+func:test_wsLong_ToString - end
+    --------------------------------    
+    --------------------------------    
+func:test_wscUUID_ToString - begin
+wsiObject::sIID           : {3F45A92B-A7D5-4d93-946C-373E56A8C17B}
+wsiObject::sIID ToString  : {3f45a92b-a7d5-4d93-946c-373e56a8c17b}
+wsiObject::sIID ParseUUID : {3f45a92b-a7d5-4d93-946c-373e56a8c17b}
+exception: [wscThrowable]
+func:test_wscUUID_ToString - end
+    --------------------------------    
+case:StringTest - end
+========================================
+========================================
+case:ThrowableTest - begin
+    --------------------------------    
+    0.tid_wsThrowable
+    --------------------------------    
+    1.tid_wsException
+    --------------------------------    
+    2.tid_wsError
+    --------------------------------    
+    3.tid_wsRuntimeException
+    --------------------------------    
+    4.tid_wsNullPointerException
+    --------------------------------    
+    5.tid_wsClassCastException
+    --------------------------------    
+    6.tid_wsIOException
+    --------------------------------    
+    7.tid_wsUTFDataFormatException
+    --------------------------------    
+    8.tid_wsUnsupportedEncodingException
+    --------------------------------    
+    9.tid_wsInterruptedIOException
+    --------------------------------    
+    10.tid_wsEOFException
+case:ThrowableTest - end
+========================================
+========================================
+case:ThreadTest - begin
+    --------------------------------    
+func:test_CreateThread - begin
+func:test_CreateThread - end
+    --------------------------------    
+case:ThreadTest - end
+========================================
+========================================
+case:WscomTest - begin
+    --------------------------------    
+func:test_WSCOM_static_funcs - begin
+WSCOM::WS_InitWSCOMtest_WSCOM_static_funcs exception
+func:test_WSCOM_static_funcs - end
+    --------------------------------    
+    --------------------------------    
+func:test_LoadLibrary - begin
+func:test_LoadLibrary - end
+    --------------------------------    
+case:WscomTest - end
+========================================
+========================================
+case:ServiceManagerTest - begin
+    --------------------------------    
+func:test_GetService - begin
+func:test_GetService - end
+    --------------------------------    
+    --------------------------------    
+func:test_GetServiceByContractID - begin
+func:test_GetServiceByContractID - end
+    --------------------------------    
+    --------------------------------    
+func:test_IsServiceInstantiated - begin
+func:test_IsServiceInstantiated - end
+    --------------------------------    
+    --------------------------------    
+func:test_IsServiceInstantiatedByContractID - begin
+func:test_IsServiceInstantiatedByContractID - end
+    --------------------------------    
+case:ServiceManagerTest - end
+========================================
+========================================
+case:ReferenceTest - begin
+exception from ReferenceTest
+case:ReferenceTest - end
+========================================
+========================================
+case:StringTest - begin
+    --------------------------------    
+func:test_wsString - begin
+func:test_wsString - end
+    --------------------------------    
+    --------------------------------    
+func:test_wsLong_ToString - begin
+ws_long        [wsString]
+-1        [-1]
+0        [0]
+1        [1]
+2147483647        [2147483647]
+-2147483647        [-2147483647]
+2147483647        [2147483647]
+0        [0]
+0        [0]
+func:test_wsLong_ToString - end
+    --------------------------------    
+    --------------------------------    
+func:test_wscUUID_ToString - begin
+wsiObject::sIID           : {3F45A92B-A7D5-4d93-946C-373E56A8C17B}
+wsiObject::sIID ToString  : {3f45a92b-a7d5-4d93-946c-373e56a8c17b}
+wsiObject::sIID ParseUUID : {3f45a92b-a7d5-4d93-946c-373e56a8c17b}
+exception: [wscThrowable]
+func:test_wscUUID_ToString - end
+    --------------------------------    
+case:StringTest - end
+========================================
+========================================
+case:ThrowableTest - begin
+    --------------------------------    
+    0.tid_wsThrowable
+    --------------------------------    
+    1.tid_wsException
+    --------------------------------    
+    2.tid_wsError
+    --------------------------------    
+    3.tid_wsRuntimeException
+    --------------------------------    
+    4.tid_wsNullPointerException
+    --------------------------------    
+    5.tid_wsClassCastException
+    --------------------------------    
+    6.tid_wsIOException
+    --------------------------------    
+    7.tid_wsUTFDataFormatException
+    --------------------------------    
+    8.tid_wsUnsupportedEncodingException
+    --------------------------------    
+    9.tid_wsInterruptedIOException
+    --------------------------------    
+    10.tid_wsEOFException
+case:ThrowableTest - end
+========================================
+========================================
+case:ThreadTest - begin
+    --------------------------------    
+func:test_CreateThread - begin
+func:test_CreateThread - end
+    --------------------------------    
+case:ThreadTest - end
+========================================
+========================================
+case:WscomTest - begin
+    --------------------------------    
+func:test_WSCOM_static_funcs - begin
+WSCOM::WS_InitWSCOMtest_WSCOM_static_funcs exception
+func:test_WSCOM_static_funcs - end
+    --------------------------------    
+    --------------------------------    
+func:test_LoadLibrary - begin
+func:test_LoadLibrary - end
+    --------------------------------    
+case:WscomTest - end
+========================================
+========================================
+case:ServiceManagerTest - begin
+    --------------------------------    
+func:test_GetService - begin
+func:test_GetService - end
+    --------------------------------    
+    --------------------------------    
+func:test_GetServiceByContractID - begin
+func:test_GetServiceByContractID - end
+    --------------------------------    
+    --------------------------------    
+func:test_IsServiceInstantiated - begin
+func:test_IsServiceInstantiated - end
+    --------------------------------    
+    --------------------------------    
+func:test_IsServiceInstantiatedByContractID - begin
+func:test_IsServiceInstantiatedByContractID - end
+    --------------------------------    
+case:ServiceManagerTest - end
+========================================
+========================================
+case:ReferenceTest - begin
+exception from ReferenceTest
+case:ReferenceTest - end
+========================================

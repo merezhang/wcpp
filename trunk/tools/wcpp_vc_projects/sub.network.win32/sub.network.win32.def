@@ -1,0 +1,8 @@
+LIBRARY	"sub.network.win32"
+
+
+
+EXPORTS
+
+WSGetModule  @1
+

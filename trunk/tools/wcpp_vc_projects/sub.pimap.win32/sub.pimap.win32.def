@@ -1,0 +1,8 @@
+LIBRARY	"sub.pimap.win32"
+
+
+
+EXPORTS
+
+WSGetModule  @1
+
