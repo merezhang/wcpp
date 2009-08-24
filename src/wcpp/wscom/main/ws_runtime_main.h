@@ -19,6 +19,7 @@ private:
     ws_ptr<wsiComponentManager>     m_CompMgr;
     ws_ptr<wsiComponentRegistrar>   m_CompReg;
     ws_ptr<wsiMemory>               m_Memory;
+    ws_ptr<wsiLangService>          m_LangService;
 
     wsuGC   m_gc;
 
@@ -32,6 +33,7 @@ private:
 public:
 
     static void Init(void);
+    static void Shutdown(void);
     static void DestroyGlobalManager(void);
 
 public:     // debug
@@ -44,6 +46,7 @@ public:     // ws_runtime
     WS_METHOD( ws_result , GetComponentManager   )(wsiComponentManager ** ret);
     WS_METHOD( ws_result , GetComponentRegistrar )(wsiComponentRegistrar ** ret);
     WS_METHOD( ws_result , GetMemoryManager      )(wsiMemory ** ret);
+    WS_METHOD( ws_result , GetLangService        )(wsiLangService ** ret);
 
     WS_METHOD( ws_int , IncrementRefcnt      )(ws_int * pn);
     WS_METHOD( ws_int , DecrementRefcnt      )(ws_int * pn);

@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <Winsock2.h>
 
 
 #ifdef _MANAGED
@@ -13,6 +14,14 @@ BOOL APIENTRY DllMain( HMODULE hModule,
                        LPVOID lpReserved
 					 )
 {
+    static bool sNoInit = true;
+    if (sNoInit) {
+        sNoInit = false;
+        WSADATA wsaData;
+        WORD wVersionRequested = MAKEWORD( 2, 2 );
+        int err = WSAStartup( wVersionRequested, &wsaData );
+    }
+
     return TRUE;
 }
 

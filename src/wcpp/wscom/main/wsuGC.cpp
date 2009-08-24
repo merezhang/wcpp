@@ -1,6 +1,7 @@
 #include "wsuGC.h"
 #include <wcpp/wspr/wsuSingleLock.h>
 #include <wcpp/lang/wsiObject.h>
+#include <wcpp/wspr/wspr.h>
 
 
 wsuGC::wsuGC(void)
@@ -16,37 +17,54 @@ wsuGC::wsuGC(void)
 
 wsuGC::~wsuGC(void)
 {
-    while (!m_stopped) {
-        m_doStop = WS_TRUE;
-    }
-
-    delete m_pThread;
-    m_pThread = WS_NULL;
+    Stop();
 }
 
 
 ws_result wsuGC::ThreadProc(void)
 {
-    while (true) {
+    while ( ! m_doStop ) {
         m_pThread->Sleep( 1000 );
-
         int cnt = DoRelease();
         SwapObjBuf();
+    }
 
-        if (m_doStop) {
-            if (cnt==0) break;
+    /*
+    int timeout = 0;
+    while (timeout < 5) {
+        int cnt = DoRelease();
+        SwapObjBuf();
+        if (cnt <= 0) {
+            timeout ++ ;
+        }
+        else {
+            timeout = 0;
         }
     }
+    */
 
     m_stopped = WS_TRUE;
     return WS_RLT_SUCCESS;
 }
 
 
+void wsuGC::Stop(void)
+{
+    while (!m_stopped) {
+        m_doStop = WS_TRUE;
+        ws_thread::Sleep( 100 );
+    }
+    delete m_pThread;
+    m_pThread = WS_NULL;
+}
+
+
 void wsuGC::PreRelease(wsiObject * obj)
 {
+//    if (m_stopped) {
+        WS_ASSERT( m_stopped == WS_FALSE );
+//    }
     wsuSingleLock lock( & m_mutex );
-
     m_objbuf_in->push_back( obj );
 }
 

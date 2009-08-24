@@ -47,16 +47,14 @@ ws_result wscServiceManager::GetService(const ws_cid & aClass, const ws_iid & aI
 {
 	ws_ptr<wsiObject> obj;
     FindService( aClass, &obj );
-    if (!(!obj)) return WS_RLT_SUCCESS;
-
-    ws_ptr<wsiComponentManager> compMgr;
-	WSCOM::WS_GetComponentManager( &compMgr );
-
-	ws_result rlt = compMgr->CreateInstance( aClass, WS_NULL, obj.GetIID(), (void**) (&obj) );
-    if (rlt!=WS_RLT_SUCCESS) return rlt;
-
-	AddService( aClass, obj );
-	return obj->QueryInterface( aIID, ret );
+    if (!obj) {
+        ws_ptr<wsiComponentManager> compMgr;
+        WSCOM::WS_GetComponentManager( &compMgr );
+        ws_result rlt = compMgr->CreateInstance( aClass, WS_NULL, obj.GetIID(), (void**) (&obj) );
+        if (rlt!=WS_RLT_SUCCESS) return rlt;
+    	AddService( aClass, obj );
+    }
+    return obj->QueryInterface( aIID , ret );
 }
 
 

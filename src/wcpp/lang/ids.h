@@ -10,6 +10,8 @@
 #include "wsiLangService.h"
 #include "wsiThrowable.h"
 #include "wsiUUID.h"
+#include "wsiLong.h"
+#include "wsiInteger.h"
 
 #include "wsoLangService.h"
 
@@ -32,6 +34,10 @@ WS_IMPL_IID_OF( wsiThreadService )
 WS_IMPL_IID_OF( wsiStringService )
 WS_IMPL_IID_OF( wsiStringRW )
 WS_IMPL_IID_OF( wsiUUID )
+WS_IMPL_IID_OF( wsiByteArray )
+WS_IMPL_IID_OF( wsiNumber )
+WS_IMPL_IID_OF( wsiLong )
+WS_IMPL_IID_OF( wsiInteger )
 
 
 WS_IMPL_CID_OF( wsoLangService )
@@ -42,6 +48,8 @@ WS_IMPL_ClassName_OF( wscClass )
 WS_IMPL_ClassName_OF( wscString )
 WS_IMPL_ClassName_OF( wscThread )
 WS_IMPL_ClassName_OF( wscUUID )
+WS_IMPL_ClassName_OF( wscArrayBase )
+WS_IMPL_ClassName_OF( wscValueArrayBase )
 
 
 

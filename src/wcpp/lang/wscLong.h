@@ -2,14 +2,14 @@
 #ifndef __wscLong_h__
 #define __wscLong_h__
 
-#include "wscObject.h"
+#include "wscNumber.h"
 #include "wsiLong.h"
 #include "wsiString.h"
 
 
 
 
-class wscLong : public wscObject , public wsiLong
+class wscLong : public wscNumber , public wsiLong
 {
 public:
 
@@ -22,6 +22,21 @@ public:
 
     static const ws_long MAX_VALUE = 2147483647;
     static const ws_long MIN_VALUE = -2147483647;
+
+protected:
+
+    WS_METHOD( ws_byte   , ByteValue   )(void);
+    WS_METHOD( ws_double , DoubleValue )(void);
+    WS_METHOD( ws_float  , FloatValue  )(void);
+    WS_METHOD( ws_int    , IntValue    )(void);
+    WS_METHOD( ws_long   , LongValue   )(void);
+    WS_METHOD( ws_short  , ShortValue  )(void);
+
+protected:
+
+    wscLong(ws_long value);
+    wscLong(wsiString * s);
+    ~wscLong(void);
 
 public:
 

@@ -278,8 +278,25 @@ ws_boolean  wscString::Equals(wsiObject * anObject) const
 
 ws_boolean  wscString::EqualsIgnoreCase(wsiString * anotherString) const
 {
-    WS_THROW( wseUnsupportedOperationException,"");
-    return WS_FALSE;
+    if (anotherString==WS_NULL) return WS_FALSE;
+    const ws_char * const anBuf = anotherString->GetBuffer();
+    const ws_int          anLen = anotherString->GetLength();
+    const ws_char * const myBuf = GetBuffer();
+    const ws_int          myLen = GetLength();
+    if ((anBuf==WS_NULL) || (myBuf==WS_NULL) || (myLen<0) || (anLen<0)) {
+        return WS_FALSE;
+    }
+    if (myLen != anLen) {
+        return WS_FALSE;
+    }
+    for ( ws_int i=(anLen-1); i>=0 ; i-- ) {
+        int c1 = anBuf[i];
+        int c2 = myBuf[i];
+        if (('A'<=c1) && (c1<='Z')) c1 = (c1 - 'A' + 'a');
+        if (('A'<=c2) && (c2<='Z')) c2 = (c2 - 'A' + 'a');
+        if (c1 != c2) return WS_FALSE;
+    }
+    return WS_TRUE;
 }
 
 
@@ -707,6 +724,31 @@ ws_int   wscString::SetString(const ws_char * const buf, ws_int newLength)
     WS_THROW( wseStringIndexOutOfBoundsException , "" );
 
     return 0;
+}
+
+
+ws_boolean wscString::InternalEquals(wsiObject * obj)
+{
+    if (obj==WS_NULL) return WS_FALSE;
+    ws_ptr<wsiString> objstr;
+    ws_result rlt = obj->QueryInterface( objstr.GetIID() , (void**)(&objstr) );
+    if (rlt != WS_RLT_SUCCESS) return WS_FALSE;
+    const ws_char * const anBuf = objstr->GetBuffer();
+    const ws_int          anLen = objstr->GetLength();
+    const ws_char * const myBuf = GetBuffer();
+    const ws_int          myLen = GetLength();
+    if ((anBuf==WS_NULL) || (myBuf==WS_NULL) || (myLen<0) || (anLen<0)) {
+        return WS_FALSE;
+    }
+    if (myLen != anLen) {
+        return WS_FALSE;
+    }
+    for ( ws_int i=(anLen-1); i>=0 ; i-- ) {
+        int c1 = anBuf[i];
+        int c2 = myBuf[i];
+        if (c1 != c2) return WS_FALSE;
+    }
+    return WS_TRUE;
 }
 
 

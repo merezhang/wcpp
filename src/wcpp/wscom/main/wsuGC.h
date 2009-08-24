@@ -28,6 +28,7 @@ public:
     wsuGC(void);
     ~wsuGC(void);
     void PreRelease(wsiObject * obj);
+    void Stop(void);
 private:
     ws_result ThreadProc(void);
     void SwapObjBuf(void);

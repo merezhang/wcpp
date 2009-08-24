@@ -19,6 +19,13 @@ ws_result WSCOM::WS_InitRuntime(void)
 }
 
 
+ws_result WSCOM::WS_ShutdownRuntime(void)
+{
+    ws_runtime_main::Shutdown();
+    return WS_RLT_SUCCESS;
+}
+
+
 ws_result WSCOM::WS_InitWSCOM(wsiServiceManager **result, wsiFile *binDirectory, wsiDirectoryServiceProvider *appFileLocationProvider)
 {
     return WSCOM_main::Init( result , binDirectory , appFileLocationProvider );
