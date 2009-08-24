@@ -21,9 +21,10 @@ private:
 
 public:
 
-	static ws_result WS_InitRuntime   (void);
-	static ws_result WS_InitWSCOM     (wsiServiceManager ** result, wsiFile * binDirectory, wsiDirectoryServiceProvider * appFileLocationProvider);
-	static ws_result WS_ShutdownWSCOM (wsiServiceManager * servMgr);
+	static ws_result WS_InitRuntime     (void);
+	static ws_result WS_ShutdownRuntime (void);
+	static ws_result WS_InitWSCOM       (wsiServiceManager ** result, wsiFile * binDirectory, wsiDirectoryServiceProvider * appFileLocationProvider);
+	static ws_result WS_ShutdownWSCOM   (wsiServiceManager * servMgr);
 
 	static ws_result WS_GetServiceManager     (wsiServiceManager     ** result);
 	static ws_result WS_GetComponentManager   (wsiComponentManager   ** result);

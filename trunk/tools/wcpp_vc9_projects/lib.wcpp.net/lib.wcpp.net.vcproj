@@ -149,11 +149,43 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\..\..\src\wcpp\net\wscDatagramPacket.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\wcpp\net\wscDatagramSocket.cpp"
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\wcpp\net\wscDatagramSocketImpl.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInet4Address.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInet6Address.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInetAddress.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInetSocketAddress.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInterfaceAddress.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\wcpp\net\wscNetworkLibrary.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscSocketAddress.cpp"
 				>
 			</File>
 			<File
@@ -171,7 +203,35 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\wcpp\net\wscDatagramPacket.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\wcpp\net\wscDatagramSocket.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscDatagramSocketImpl.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInet4Address.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInet6Address.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInetAddress.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInetSocketAddress.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wscInterfaceAddress.h"
 				>
 			</File>
 			<File
@@ -179,7 +239,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\wcpp\net\wscSocketAddress.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\wcpp\net\wscURI.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiAddressImplFactory.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiDatagramPacket.h"
 				>
 			</File>
 			<File
@@ -187,7 +259,43 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\src\wcpp\net\wsiNetwork.h"
+				RelativePath="..\..\..\src\wcpp\net\wsiDatagramSocketImpl.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiDatagramSocketImplFactory.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiInet4Address.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiInet6Address.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiInetAddress.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiInetSocketAddress.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiInterfaceAddress.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiNetworkLibrary.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiSocketAddress.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\net\wsiSocketOptions.h"
 				>
 			</File>
 			<File

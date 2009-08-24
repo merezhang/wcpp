@@ -129,7 +129,8 @@ protected:      // constructor / destructor / operator=
 
 protected:      // internal functions
 
-    ws_int InternalHashCode(void);
+    ws_int      InternalHashCode(void);
+    ws_boolean  InternalEquals(wsiObject * obj);
 
 private:    // data member
 

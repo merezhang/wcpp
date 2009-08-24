@@ -24,6 +24,7 @@ private:
 public:
 
 	wscPrintStream(void);
+	wscPrintStream(wsiOutputStream * out);
 	~wscPrintStream(void);
 
     static void New(wsiPrintStream ** ret, wsiOutputStream * out);

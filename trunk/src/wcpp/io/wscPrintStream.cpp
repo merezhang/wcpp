@@ -18,6 +18,12 @@ wscPrintStream::wscPrintStream(void) : m_Err(WS_FALSE)
 }
 
 
+wscPrintStream::wscPrintStream(wsiOutputStream * out) : m_Err(WS_FALSE)
+{
+    m_Out.Set( out );
+}
+
+
 wscPrintStream::~wscPrintStream(void)
 {
 }

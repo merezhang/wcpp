@@ -157,7 +157,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\wcpp\lang\wscInteger.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\wcpp\lang\wscLong.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\lang\wscNumber.cpp"
 				>
 			</File>
 			<File
@@ -215,7 +223,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\wcpp\lang\wscInteger.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\wcpp\lang\wscLong.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\wcpp\lang\wscNumber.h"
 				>
 			</File>
 			<File

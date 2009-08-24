@@ -97,6 +97,7 @@ protected:  // implements wsiObject
 	ws_boolean  InternalEquals     (wsiObject * obj);
 //	ws_result   InternalGetClass   (wsiClass ** rClass);
 	ws_int      InternalHashCode   (void);
+
 	ws_result   InternalNotify     (void);
 	ws_result   InternalNotifyAll  (void);
     ws_result   InternalToString   (wsiString ** rString);

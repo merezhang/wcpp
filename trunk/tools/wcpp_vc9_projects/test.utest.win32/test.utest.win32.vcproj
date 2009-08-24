@@ -185,6 +185,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\utInputStream.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\utOutputStream.cpp"
 				>
 			</File>
@@ -204,6 +208,10 @@
 			</File>
 			<File
 				RelativePath=".\TestSession.h"
+				>
+			</File>
+			<File
+				RelativePath=".\utInputStream.h"
 				>
 			</File>
 			<File

@@ -1,6 +1,6 @@
 #include "wscNetworkModule.h"
 #include <wcpp/lang/wscObject.h>
-#include <wcpp/net/wscNetworkLibrary.h>
+#include <wcpp/net/impl/wscNetworkLibraryImpl.h>
 
 
 /*
@@ -47,7 +47,7 @@ ws_result wscNetworkModule::IndexToClassId(ws_cid & rClass , ws_int index)
 ws_result wscNetworkModule::NewClassFactory(wsiFactory ** ret , const ws_cid & aClass)
 {
     if (aClass == wscNetworkLibrary::sCID) {
-        return NewObj<wscNetworkLibrary::t_factory>( ret );
+        return NewObj<wscNetworkLibraryImpl::t_factory>( ret );
     }
     else {
         return WS_RLT_CLASS_NOT_FOUND;

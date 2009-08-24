@@ -62,3 +62,23 @@ ws_int wscArrayBase::InternalGetSize(void)
     return m_size;
 }
 
+
+/*
+******************************************************************************************************************************
+*       wscValueArrayBase
+******************************************************************************************************************************
+*/
+
+
+void * wscValueArrayBase::InternalAlloca(ws_int size)
+{
+    return ( new ws_byte [ size ] );
+}
+
+
+void wscValueArrayBase::InternalFree(void *p)
+{
+    ws_byte * pdel =(ws_byte *) p;
+    if (pdel) delete [] pdel;
+}
+

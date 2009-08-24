@@ -6,8 +6,7 @@
 #include <wcpp/wscom/main/WSCOM_main.h>
 #include <wcpp/io/wscFile.h>
 #include "utOutputStream.h"
-
-
+#include "utInputStream.h"
 
 
 TestSession::TestSession(void)
@@ -18,6 +17,7 @@ TestSession::TestSession(void)
     wscFile::New( &file , ws_str("D:\\temp\\wscom") );
     WSCOM::WS_InitWSCOM( &servMgr , file , WS_NULL );
     m_ServMgr.Set( servMgr );
+    utInputStream::Init();
     utOutputStream::Init();
 }
 

@@ -9,7 +9,7 @@
 #include <wcpp/io/wscPrintStream.h>
 #include <wcpp/wspr/ws_file.h>
 #include "utOutputStream.h"
-
+#include <iostream>
 
     
 const ws_char * const utOutputStream::s_class_name = "utOutputStream";
@@ -23,6 +23,7 @@ void utOutputStream::Init(void)
     ws_ptr<wsiPrintStream> ps;
     wscPrintStream::New( &ps , os );
     wscSystem::SetOut( ps );
+    wscSystem::SetErr( ps );
 }
 
 
@@ -38,6 +39,7 @@ utOutputStream::~utOutputStream(void)
 
 ws_result utOutputStream::Write(ws_int b)
 {
+    std::cout << static_cast<char>(b);
     return 0;
 }
 

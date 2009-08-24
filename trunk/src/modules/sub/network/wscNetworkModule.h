@@ -1,9 +1,9 @@
 #pragma once
 
-#include <wcpp/wscom/wscModule.h>
+#include <wcpp/wscom/sub/wscSubModule.h>
 
 
-class wscNetworkModule : public wscModule
+class wscNetworkModule : public wscSubModule
 {
 public:
     static const ws_char * const s_class_name;

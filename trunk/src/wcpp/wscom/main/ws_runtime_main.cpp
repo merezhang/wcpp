@@ -8,6 +8,7 @@
 #include <wcpp/wscom/wsiComponentRegistrar.h>
 #include <wcpp/wscom/wsiMemory.h>
 #include <wcpp/lang/wsiThrowable.h>
+#include <wcpp/lang/service/wscLangService.h>
 
 
 /*
@@ -40,6 +41,8 @@ void ws_runtime_main::DestroyGlobalManager(void)
     ws_runtime_main::s_Instance->m_CompReg.Release();
     ws_runtime_main::s_Instance->m_ServMgr.Release();
     ws_runtime_main::s_Instance->m_Memory.Release();
+
+    ws_runtime_main::s_Instance->m_LangService.Release();
 }
 
 
@@ -48,15 +51,25 @@ void ws_runtime_main::Init(void)
     static ws_runtime_main sInst;
 
     if ( !(sInst.m_CompMgr) ) {
+
+        ws_ptr<wsiLangService> langSer;
+        NewObj<wscLangService>( &langSer );
+        langSer.CopyTo( & sInst.m_LangService );
+
         ws_ptr<wsiGlobalManager> gm;
         ws_result rlt = NewObj<wscGlobalManager>( &gm );
         if (rlt != WS_RLT_SUCCESS) return;
-
         gm.QueryInterface2( & sInst.m_CompMgr );
         gm.QueryInterface2( & sInst.m_CompReg );
         gm.QueryInterface2( & sInst.m_ServMgr );
         gm.QueryInterface2( & sInst.m_Memory );
     }
+}
+
+
+void ws_runtime_main::Shutdown(void)
+{
+    ws_runtime_main::s_Instance->m_gc.Stop();
 }
 
 
@@ -93,6 +106,16 @@ ws_result ws_runtime_main::GetComponentRegistrar(wsiComponentRegistrar ** ret)
 ws_result ws_runtime_main::GetMemoryManager(wsiMemory ** ret)
 {
     m_Memory.CopyTo( ret );
+    if ((*ret) == WS_NULL) {
+        throw WS_RLT_ILLEGAL_STATE;
+    }
+    return WS_RLT_SUCCESS;
+}
+
+
+ws_result ws_runtime_main::GetLangService(wsiLangService ** ret)
+{
+    m_LangService.CopyTo( ret );
     if ((*ret) == WS_NULL) {
         throw WS_RLT_ILLEGAL_STATE;
     }

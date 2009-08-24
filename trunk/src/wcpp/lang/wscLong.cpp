@@ -40,3 +40,55 @@ ws_long wscLong::ParseLong(wsiString * aString)
     return 0;
 }
 
+
+wscLong::wscLong(ws_long value) : m_value(value)
+{
+}
+
+
+wscLong::wscLong(wsiString * s) : m_value(0)
+{
+    m_value = ParseLong(s);
+}
+
+
+wscLong::~wscLong(void)
+{
+}
+
+
+ws_byte   wscLong::ByteValue(void)
+{
+    return static_cast<ws_byte>(m_value);
+}
+
+
+ws_double wscLong::DoubleValue(void)
+{
+    return static_cast<ws_double>(m_value);
+}
+
+
+ws_float  wscLong::FloatValue(void)
+{
+    return static_cast<ws_float>(m_value);
+}
+
+
+ws_int    wscLong::IntValue(void)
+{
+    return static_cast<ws_int>(m_value);
+}
+
+
+ws_long   wscLong::LongValue(void)
+{
+    return m_value;
+}
+
+
+ws_short  wscLong::ShortValue(void)
+{
+    return static_cast<ws_short>(m_value);
+}
+

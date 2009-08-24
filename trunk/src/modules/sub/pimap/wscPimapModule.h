@@ -3,8 +3,6 @@
 #include <wcpp/wscom/sub/wscSubModule.h>
 
 
-
-
 class wscPimapModule : public wscSubModule
 {
 public:

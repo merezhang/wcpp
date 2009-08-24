@@ -159,9 +159,7 @@ void wscThread::CurrentThread(wsiThread ** rThread)
 
 void wscThread::Sleep(ws_long millis)
 {
-    ws_ptr<wsiThreadService> ts;
-    GetThreadService( &ts );
-    ts->Sleep( millis );
+    ws_thread::Sleep( millis );
 }
 
 
@@ -286,7 +284,7 @@ void wscThread::_ThreadProc2(void)
     };
 
     m_id = ws_thread::GetCurrentThreadId();
-    t_auto_state_man( &m_started , &m_stopped );
+    t_auto_state_man  aASM( &m_started , &m_stopped );
     
     wsiRunnable * pRun = this;
     pRun->Run();

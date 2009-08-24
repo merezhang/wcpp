@@ -8,9 +8,9 @@
 
 class wsiCharSequence;
 class wsiStringBuffer;
-class wsiByteArray;
+// class wsiByteArray;
 class wsiCharset;
-class wsiCharArray;
+// class wsiCharArray;
 class wsiLocale;
 
 typedef    wsiArray<wsiString>    wsiStringArray;

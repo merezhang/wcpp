@@ -3,13 +3,14 @@
 #include <wcpp/wspr/wspr.h>
 
 
+class ws_debug_probe;
 class wsiServiceManager;
 class wsiComponentManager;
 class wsiComponentRegistrar;
 class wsiMemory;
-class ws_debug_probe;
 class wsiObject;
 class wsiThrowable;
+class wsiLangService;
 
 
 class ws_runtime
@@ -29,6 +30,7 @@ public:
     WS_METHOD( ws_result , GetComponentManager   )(wsiComponentManager ** ret) = 0;
     WS_METHOD( ws_result , GetComponentRegistrar )(wsiComponentRegistrar ** ret) = 0;
     WS_METHOD( ws_result , GetMemoryManager      )(wsiMemory ** ret) = 0;
+    WS_METHOD( ws_result , GetLangService        )(wsiLangService ** ret) = 0;
 
     WS_METHOD( ws_int , IncrementRefcnt      )(ws_int * pn) = 0;
     WS_METHOD( ws_int , DecrementRefcnt      )(ws_int * pn) = 0;
