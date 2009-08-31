@@ -5,23 +5,9 @@
 #include <windows.h>
 
 
-ws_result wscAddressImplFactory_win32::GetByAddress(wsiInetAddress ** ret, const ws_byte * buf, ws_int cb)
+ws_result wscAddressImplFactory_win32::NameToAddress(wsiInetAddress ** ret, const ws_char * const name)
 {
-    WS_THROW( wseUnsupportedOperationException , "" );
-}
-
-
-ws_result wscAddressImplFactory_win32::GetLocalHost(wsiInetAddress ** ret)
-{
-    if (ret==WS_NULL) return WS_RLT_NULL_POINTER;
-    if (*ret) return WS_RLT_NULL_POINTER;
-
-    char buf[ 128 ];
-    if ( gethostname(buf,sizeof(buf)) != 0 ) {
-        return WS_RLT_FAILED;
-    }
-
-    hostent * pHostEnt = gethostbyname( buf );
+    hostent * pHostEnt = gethostbyname( name );
     if (pHostEnt == 0) {
         return WS_RLT_FAILED;
     }
@@ -52,6 +38,41 @@ ws_result wscAddressImplFactory_win32::GetLocalHost(wsiInetAddress ** ret)
     else {
         WS_THROW( wseUnsupportedOperationException , "" );
     }
+}
+
+
+ws_result wscAddressImplFactory_win32::GetByAddress(wsiInetAddress ** ret, const ws_byte * buf, ws_int cb)
+{
+    if (ret==WS_NULL) return WS_RLT_NULL_POINTER;
+    if (*ret) return WS_RLT_NULL_POINTER;
+    if (buf==WS_NULL) return WS_RLT_NULL_POINTER;
+    if (cb == sizeof(sockaddr_in)) {
+        sockaddr_in   i4addr;
+        wspr::ws_memcpy( &i4addr , buf , sizeof(i4addr) );
+        wsiInet4Address * pnew = WS_NULL;
+        ws_result rlt = NewObj<wscInet4Address_win32>( &pnew , i4addr );
+        *ret = pnew;
+        return rlt;
+    }
+    else {
+        return WS_RLT_FAILED;
+    }
+}
+
+
+ws_result wscAddressImplFactory_win32::GetByName(wsiInetAddress ** ret, wsiString * host)
+{
+    if ((host==WS_NULL) || (ret==WS_NULL)) return WS_RLT_NULL_POINTER;
+    if (*ret) return WS_RLT_NULL_POINTER;
+    return NameToAddress( ret , host->GetBuffer() );
+}
+
+
+ws_result wscAddressImplFactory_win32::GetLocalHost(wsiInetAddress ** ret)
+{
+    if (ret==WS_NULL) return WS_RLT_NULL_POINTER;
+    if (*ret) return WS_RLT_NULL_POINTER;
+    return NameToAddress( ret , "localhost" );
 }
 
 

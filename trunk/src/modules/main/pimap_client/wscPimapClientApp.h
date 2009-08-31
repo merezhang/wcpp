@@ -34,6 +34,7 @@ protected:
     WS_METHOD( ws_result  , WaitForCmd  )(wsiConsoleCommand ** ret);
     WS_METHOD( ws_result  , OnCmdMapped )(ws_int id, wsiConsoleCommand * cmd);
 private:
+    void OnCmdExit(wsiConsoleCommand * cmd);
     void OnCmdHelp(wsiConsoleCommand * cmd);
     void OnCmdInfo(wsiConsoleCommand * cmd);
     void OnCmdLogin(wsiConsoleCommand * cmd);

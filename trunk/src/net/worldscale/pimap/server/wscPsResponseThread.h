@@ -12,5 +12,6 @@ protected:
     wscPsResponseThread(wsiPsWorkingContext * pWorkingContext);
     ~wscPsResponseThread();
     WS_METHOD( ws_result , Run )(void);
+//    static ws_result OnReceive( wsiPsWorkingContext * wkContext , wsiDatagramPacket * packet );
 };
 

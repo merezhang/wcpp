@@ -28,7 +28,7 @@ ws_result wscPimapClientApp::OnExit(void)
     m_client.Get( &pimapClient );
     m_client.Set( WS_NULL );
 
-//    if (!(!pimapClient)) pimapClient->Logout();
+    if (!(!pimapClient)) pimapClient->Close();
 
     return WS_RLT_SUCCESS;
 }
@@ -47,7 +47,7 @@ ws_result wscPimapClientApp::WaitForCmd(wsiConsoleCommand **ret)
 ws_result wscPimapClientApp::OnCmdMapped(ws_int id, wsiConsoleCommand *cmd)
 {
     switch (id) {
-        case cmdExit:   Exit();             break;
+        case cmdExit:   OnCmdExit(cmd);     break;
         case cmdHelp:   OnCmdHelp(cmd);     break;
         case cmdInfo:   OnCmdInfo(cmd);     break;
         case cmdLogin:  OnCmdLogin(cmd);    break;
@@ -113,7 +113,14 @@ void wscPimapClientApp::OnCmdLogin(wsiConsoleCommand *cmd)
 {
     ws_ptr<wsiPrintStream> out;
     GetOutput(&out);
-    out->PrintLn( "login ... [no implements]" );
+    out->PrintLn( "login ... " );
+
+    ws_ptr<wsiPimapClient> client;
+    m_client.Get( &client );
+    ws_str user( "xukun17" );
+    ws_str pswd( "12345678" );
+    ws_str serv( "localhost" );
+    client->Login( user , pswd , serv , 10217 );
 }
 
 
@@ -122,5 +129,18 @@ void wscPimapClientApp::OnCmdLogout(wsiConsoleCommand *cmd)
     ws_ptr<wsiPrintStream> out;
     GetOutput(&out);
     out->PrintLn( "logout ... [no implements]" );
+}
+
+
+void wscPimapClientApp::OnCmdExit(wsiConsoleCommand *cmd)
+{
+    Exit();
+    ws_ptr<wsiPrintStream> out;
+    GetOutput(&out);
+    out->PrintLn( "exit ... " );
+    ws_ptr<wsiPimapClient> pimapClient;
+    m_client.Get( &pimapClient );
+    if (!pimapClient) return;
+    pimapClient->Close();
 }
 

@@ -27,12 +27,10 @@ ws_result wscPsReceiveThread::Run(void)
     wkContext->GetExchangeBuffer( & exbuf );
     if (!exbuf) return WS_RLT_FAILED;
 
-    // create udp listener
-    const ws_int nPort = wkContext->GetListeningPort();
+    // get udp listener
     ws_ptr<wsiDatagramSocket> dgSock;
-    ws_result rlt = NewObj<wscDatagramSocket>( & dgSock , nPort );
+    ws_result rlt = wkContext->GetDatagramSocket( &dgSock );
     if (rlt != WS_RLT_SUCCESS) return rlt;
-    wkContext->SetDatagramSocket( dgSock );
 
     ws_ptr<wsiDatagramPacket> packet;
     while ( ! wkContext->GetStopFlag() ) {

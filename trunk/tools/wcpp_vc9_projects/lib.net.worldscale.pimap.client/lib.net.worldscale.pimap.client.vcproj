@@ -149,6 +149,38 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcEventDispatcher.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcExchangeBuffer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcReceiveThread.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcTransmitter.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcUpPacket.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcUser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcWorkingContext.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcWorkingThread.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPimapClient.cpp"
 				>
 			</File>
@@ -159,7 +191,71 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\ids.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcEventDispatcher.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcExchangeBuffer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcReceiveThread.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcTransmitter.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcUpPacket.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcUser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcWorkingContext.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPcWorkingThread.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPimapClient.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wscPimapClientConfig.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wsiPcEventDispatcher.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wsiPcExchangeBuffer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wsiPcTransmitter.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wsiPcTxThread.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wsiPcUser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\client\wsiPcWorkingContext.h"
 				>
 			</File>
 		</Filter>

@@ -18,5 +18,6 @@ public:
 public:
     WS_METHOD( ws_result , GetByAddress )(wsiInetAddress ** ret, const ws_byte * buf, ws_int cb) = 0;
     WS_METHOD( ws_result , GetLocalHost )(wsiInetAddress ** ret) = 0;
+    WS_METHOD( ws_result , GetByName    )(wsiInetAddress ** ret, wsiString * host) = 0;
 };
 

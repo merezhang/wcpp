@@ -149,7 +149,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapCoder.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapDecoder.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapLibrary.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapPacket.cpp"
 				>
 			</File>
 		</Filter>
@@ -163,11 +175,51 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapCoder.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapConfig.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapDecoder.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapLibrary.h"
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wscPimapPacket.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wsiPimapCoder.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wsiPimapDecoder.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\wsiPimapLibrary.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wsiPimapMethods.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wsiPimapMethodsDown.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wsiPimapMethodsUp.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\wsiPimapPacket.h"
 				>
 			</File>
 		</Filter>

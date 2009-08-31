@@ -149,6 +149,14 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\TransactionContext.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscMethodExecutor.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPimapServer.cpp"
 				>
 			</File>
@@ -162,6 +170,14 @@
 			</File>
 			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPsResponseThread.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPsUser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPsUserTable.cpp"
 				>
 			</File>
 			<File
@@ -183,7 +199,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\TransactionContext.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscMethodExecutor.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPimapServer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPimapServerConfig.h"
 				>
 			</File>
 			<File
@@ -199,6 +227,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPsUser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPsUserTable.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\server\wscPsWorkingContext.h"
 				>
 			</File>
@@ -207,7 +243,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wsiMethodExecutor.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\src\net\worldscale\pimap\server\wsiPsExchangeBuffer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wsiPsUser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\src\net\worldscale\pimap\server\wsiPsUserTable.h"
 				>
 			</File>
 			<File

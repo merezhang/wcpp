@@ -86,3 +86,13 @@ ws_int wspr::ws_memcmp(const void *buf1, const void *buf2, ws_int count)
     return 0;
 }
 
+
+void * wspr::ws_memset(void *dest, ws_int c, ws_int count)
+{
+    ws_byte * buf =(ws_byte *) dest;
+    for (ws_int i=(count-1); i>=0; i--) {
+        buf[i] = static_cast<ws_byte>(c);
+    }
+    return dest;
+}
+

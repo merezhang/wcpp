@@ -97,8 +97,7 @@ private:
 
     WS_METHOD( ws_result ,  ToString )  (wsiString ** rString)
     {
-        ThrowUnsupported( "", __FILE__ , __LINE__ );
-        return InternalToString(rString);
+        return InternalToString( rString );
     }
 
     WS_METHOD( ws_result ,  Wait )      (void)
@@ -227,6 +226,18 @@ ws_result NewObj(Q ** pp, T1 p1, T2 p2)
     if (*pp) {          T::ThrowIllegalState( "", __FILE__ , __LINE__ );    }
     T * pnew = WS_NULL;
     ws_result ret = wscObjectFinal<T>::New( &pnew , p1 , p2 );
+    (*pp) = pnew;
+    return ret;
+}
+
+
+template< typename T , typename Q , typename T1 , typename T2 , typename T3>
+ws_result NewObj(Q ** pp, T1 p1, T2 p2, T3 p3)
+{
+    if (pp==WS_NULL) {  T::ThrowNullPointer( "", __FILE__ , __LINE__ );     }
+    if (*pp) {          T::ThrowIllegalState( "", __FILE__ , __LINE__ );    }
+    T * pnew = WS_NULL;
+    ws_result ret = wscObjectFinal<T>::New( &pnew , p1 , p2 , p3 );
     (*pp) = pnew;
     return ret;
 }

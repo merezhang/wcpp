@@ -174,7 +174,34 @@ ws_result  wscDatagramSocketImpl_win32::Receive(wsiDatagramPacket * p)
 
 ws_result  wscDatagramSocketImpl_win32::Send(wsiDatagramPacket * p)
 {
-    WS_THROW( wseUnsupportedOperationException , "" );
+    if (p==WS_NULL) return WS_RLT_NULL_POINTER;
+    if (m_socket==INVALID_SOCKET) return WS_RLT_ILLEGAL_STATE;
+
+    ws_ptr<wsiByteArray> theData;
+    ws_result rlt = p->GetData( &theData );
+    if (rlt!=WS_RLT_SUCCESS) return rlt;
+
+    const char * const buf =(char*) theData->Data();
+    const int len = p->GetLength();
+    WS_ASSERT( len < theData->Length() );
+    
+    ws_ptr<wsiInetAddress> iAddr;
+    rlt = p->GetAddress( &iAddr );
+    if (rlt!=WS_RLT_SUCCESS) return rlt;
+    ws_ptr<wsiByteArray> bAddr;
+    rlt = iAddr->GetAddress( &bAddr );
+    if (rlt!=WS_RLT_SUCCESS) return rlt;
+    sockaddr_in addr;
+    if (sizeof(addr) <= bAddr->Length()) {
+        wspr::ws_memcpy( &addr , bAddr->Data() , sizeof(addr) );
+    }
+    else {
+        return WS_RLT_FAILED;
+    }
+    addr.sin_port =(u_short) p->GetPort();
+
+    int rlt2 = sendto( m_socket , buf , len , 0 , (SOCKADDR*)(&addr) , sizeof(addr) );
+    return ( (rlt2==len) ? WS_RLT_SUCCESS : WS_RLT_FAILED );
 }
 
 

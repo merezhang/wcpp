@@ -4,6 +4,7 @@
 
 class wsiPsExchangeBuffer;
 class wsiDatagramSocket;
+class wsiPsUserTable;
 
 
 #define WS_IID_OF_wsiPsWorkingContext       \
@@ -21,6 +22,7 @@ public:
     WS_METHOD( ws_int     , GetListeningPort  )(void) = 0;
     WS_METHOD( ws_result  , GetExchangeBuffer )(wsiPsExchangeBuffer ** ret) = 0;
     WS_METHOD( ws_result  , GetDatagramSocket )(wsiDatagramSocket ** ret) = 0;
+    WS_METHOD( ws_result  , GetUserTable      )(wsiPsUserTable ** ret) = 0;
     WS_METHOD( ws_result  , SetDatagramSocket )(wsiDatagramSocket * aDatagramSocket) = 0;
 };
 

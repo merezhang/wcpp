@@ -2,7 +2,8 @@
 #include "wscPsReceiveThread.h"
 #include "wscPsResponseThread.h"
 #include <vector>
-
+#include "wscPimapServerConfig.h"
+#include <wcpp/net/wscDatagramSocket.h>
 
 
 wscPsWorkingThread::wscPsWorkingThread(wsiPsWorkingContext * pWorkingContext)
@@ -27,8 +28,15 @@ ws_result wscPsWorkingThread::Run(void)
     ws_ptr<wsiPsWorkingContext> wc;
     m_WorkingContext.Get( &wc );
 
+    // create udp socket
+    const ws_int nPort = wc->GetListeningPort();
+    ws_ptr<wsiDatagramSocket> dgSock;
+    ws_result rlt = NewObj<wscDatagramSocket>( & dgSock , nPort );
+    if (rlt != WS_RLT_SUCCESS) return rlt;
+    wc->SetDatagramSocket( dgSock );
+
     // create response threads
-    for (int i=0; i<64; i++) {
+    for (int i=wscPimapServerConfig::MAX_THREAD_NUMBER; i>0; i--) {
         ws_ptr<wsiThread> thd;
         if ( NewObj<wscPsResponseThread>(&thd,wc) == WS_RLT_SUCCESS ) {
             threads.push_back( thd );

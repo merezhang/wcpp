@@ -5,6 +5,7 @@
 
 class wsiPsExchangeBuffer;
 class wsiDatagramSocket;
+class wsiPsUserTable;
 
 
 #define WS_ClassName_OF_wscPsWorkingContext         "net.worldscale.pimap.server.wscPsWorkingContext"
@@ -22,8 +23,9 @@ private:
     ws_int        m_nListeningPort;
     ws_safe_ptr<wsiPsExchangeBuffer>   m_ExchangeBuffer;
     ws_safe_ptr<wsiDatagramSocket>     m_DatagramSocket;
+    ws_safe_ptr<wsiPsUserTable>        m_UserTable;
 protected:
-    wscPsWorkingContext(void);
+    wscPsWorkingContext(ws_int nPort);
     ~wscPsWorkingContext(void);
 
     WS_METHOD( ws_result  , SetStopFlag )(void);
@@ -32,6 +34,7 @@ protected:
     WS_METHOD( ws_result  , GetExchangeBuffer )(wsiPsExchangeBuffer ** ret);
     WS_METHOD( ws_result  , GetDatagramSocket )(wsiDatagramSocket ** ret);
     WS_METHOD( ws_result  , SetDatagramSocket )(wsiDatagramSocket * aDatagramSocket);
+    WS_METHOD( ws_result  , GetUserTable      )(wsiPsUserTable ** ret);
 
 };
 
