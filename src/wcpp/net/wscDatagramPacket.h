@@ -15,8 +15,10 @@ class wscDatagramPacket : public wscObject , public wsiDatagramPacket
 public:
     static const ws_char * const s_class_name;
 private:
-    ws_safe_ptr<wsiByteArray>  m_buffer;
-    ws_int                     m_length;
+    ws_safe_ptr<wsiByteArray>    m_buffer;
+    ws_int                       m_length;
+    ws_safe_ptr<wsiInetAddress>  m_address;
+    ws_int                       m_port;
 protected:
 
     wscDatagramPacket(wsiByteArray * buf , ws_int length);

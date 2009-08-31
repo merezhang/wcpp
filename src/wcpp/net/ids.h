@@ -6,6 +6,7 @@
 #include "wscNetworkLibrary.h"
 #include "wsiInet4Address.h"
 #include "wsiInet6Address.h"
+#include "wsiInetSocketAddress.h"
 
 
 WS_IMPL_IID_OF( wsiDatagramSocket )
@@ -14,6 +15,8 @@ WS_IMPL_IID_OF( wsiNetworkLibrary )
 WS_IMPL_IID_OF( wsiDatagramSocketImpl )
 WS_IMPL_IID_OF( wsiDatagramSocketImplFactory )
 WS_IMPL_IID_OF( wsiAddressImplFactory )
+WS_IMPL_IID_OF( wsiSocketAddress )
+WS_IMPL_IID_OF( wsiInetSocketAddress )
 WS_IMPL_IID_OF( wsiInetAddress )
 WS_IMPL_IID_OF( wsiInet4Address )
 WS_IMPL_IID_OF( wsiInet6Address )

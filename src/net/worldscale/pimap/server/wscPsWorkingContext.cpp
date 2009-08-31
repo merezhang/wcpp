@@ -1,14 +1,20 @@
 #include "wscPsWorkingContext.h"
 #include "wscPsExchangeBuffer.h"
 #include <wcpp/net/wsiDatagramSocket.h>
+#include "wscPsUserTable.h"
 
 
-wscPsWorkingContext::wscPsWorkingContext(void) : m_StopFlag( WS_FALSE ) , m_nListeningPort(8888)
+wscPsWorkingContext::wscPsWorkingContext(ws_int nPort) : m_StopFlag( WS_FALSE ) , m_nListeningPort(nPort)
 {
     ws_ptr<wsiPsExchangeBuffer> exbuf;
     NewObj<wscPsExchangeBuffer>( & exbuf );
     WS_ASSERT( !(!exbuf) );
     m_ExchangeBuffer.Set( exbuf );
+
+    ws_ptr<wsiPsUserTable> usertab;
+    NewObj<wscPsUserTable>(&usertab);
+    WS_ASSERT( !(!usertab) );
+    m_UserTable.Set( usertab );
 }
 
 
@@ -38,8 +44,11 @@ ws_int wscPsWorkingContext::GetListeningPort(void)
 
 ws_result wscPsWorkingContext::GetExchangeBuffer(wsiPsExchangeBuffer ** ret)
 {
+    if (ret==WS_NULL) return WS_RLT_NULL_POINTER;
+    if (*ret) return WS_RLT_NULL_POINTER;
     m_ExchangeBuffer.Get( ret );
-    return WS_RLT_SUCCESS;
+    if (*ret) return WS_RLT_SUCCESS;
+    return WS_RLT_FAILED;
 }
 
 
@@ -52,7 +61,20 @@ ws_result wscPsWorkingContext::SetDatagramSocket(wsiDatagramSocket *aDatagramSoc
 
 ws_result wscPsWorkingContext::GetDatagramSocket(wsiDatagramSocket **ret)
 {
+    if (ret==WS_NULL) return WS_RLT_NULL_POINTER;
+    if (*ret) return WS_RLT_NULL_POINTER;
     m_DatagramSocket.Get( ret );
-    return WS_RLT_SUCCESS;
+    if (*ret) return WS_RLT_SUCCESS;
+    return WS_RLT_FAILED;
+}
+
+
+ws_result wscPsWorkingContext::GetUserTable(wsiPsUserTable ** ret)
+{
+    if (ret==WS_NULL) return WS_RLT_NULL_POINTER;
+    if (*ret) return WS_RLT_NULL_POINTER;
+    m_UserTable.Get( ret );
+    if (*ret) return WS_RLT_SUCCESS;
+    return WS_RLT_FAILED;
 }
 

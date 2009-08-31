@@ -16,6 +16,7 @@ public:
 
     static void * ws_memcpy(void *dest, const void *src, ws_int count);
     static ws_int ws_memcmp(const void * buf1, const void * buf2, ws_int count);
+    static void * ws_memset(void *dest, ws_int c, ws_int count);
 
     static ws_boolean ws_assert( ws_boolean expression );
 };

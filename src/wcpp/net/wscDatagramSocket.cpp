@@ -4,6 +4,7 @@
 #include <wcpp/lang/helper/ws_runtime.h>
 #include "wsiDatagramSocketImplFactory.h"
 #include "wscInetAddress.h"
+#include "wsiInetSocketAddress.h"
 
 
 wscDatagramSocket::wscDatagramSocket(void)
@@ -53,8 +54,27 @@ void wscDatagramSocket::InternalInit(void)
 }
 
 
-ws_result   wscDatagramSocket::Bind                   (wsiSocketAddress * addr)
-{ WS_THROW( wseUnsupportedOperationException , "" ); }
+ws_result wscDatagramSocket::Bind(wsiSocketAddress * addr)
+{
+    ws_int port = 0;
+    ws_ptr<wsiInetAddress> address;
+    if (addr) {
+        ws_ptr<wsiInetSocketAddress> aISA;
+        ws_result rlt = addr->QueryInterface( aISA.GetIID() , (void**)(&aISA) );
+        if (rlt!=WS_RLT_SUCCESS) return WS_RLT_ILLEGAL_ARGUMENT;
+        port = aISA->GetPort();
+        aISA->GetAddress( &address );
+    }
+    else {
+        return WS_RLT_NULL_POINTER;
+    }
+
+    ws_ptr<wsiDatagramSocketImpl> impl;
+    m_impl.Get( &impl );
+    if (!impl) return WS_RLT_ILLEGAL_STATE;
+
+    return impl->Bind( port , address );
+}
 
 
 ws_result wscDatagramSocket::Close(void)

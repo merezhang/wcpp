@@ -31,6 +31,20 @@ ws_result wscInetAddress::GetLocalHost(wsiInetAddress ** ret)
 }
 
 
+ws_result wscInetAddress::GetByName(wsiInetAddress ** ret, wsiString * host)
+{
+    ws_ptr<wsiNetworkLibrary> netlib;
+    ws_result rlt = wscNetworkLibrary::GetNetworkLibrary( &netlib );
+    if (rlt != WS_RLT_SUCCESS) return rlt;
+
+    ws_ptr<wsiAddressImplFactory> implFac;
+    rlt = netlib->GetAddressImplFactory( & implFac );
+    if (rlt != WS_RLT_SUCCESS) return rlt;
+
+    return implFac->GetByName( ret , host );
+}
+
+
 wscInetAddress::wscInetAddress(void)
 {
 }

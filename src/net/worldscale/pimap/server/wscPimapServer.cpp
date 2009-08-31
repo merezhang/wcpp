@@ -24,7 +24,7 @@ ws_result wscPimapServer::Start(ws_int nPort)
     }
 
     ws_ptr<wsiPsWorkingContext> wc;
-    ws_result rlt = NewObj<wscPsWorkingContext>( &wc );
+    ws_result rlt = NewObj<wscPsWorkingContext>( &wc , nPort );
     if (rlt != WS_RLT_SUCCESS) return rlt;
 
     rlt = NewObj<wscPsWorkingThread>( &servThd , wc );

@@ -32,8 +32,9 @@ class wsiPimapClient : public wsiObject
 public:
     static const ws_iid sIID;
 public:
-    WS_METHOD( ws_result , Login  )(wsiString * aUserName, wsiString * aPassword, wsiString * aServerAddr) = 0;
+    WS_METHOD( ws_result , Login  )(wsiString * aUserName, wsiString * aPassword, wsiString * aServerAddr, ws_int aPort) = 0;
     WS_METHOD( ws_result , Logout )(void) = 0;
+    WS_METHOD( ws_result , Close  )(void) = 0;
 };
 
 
