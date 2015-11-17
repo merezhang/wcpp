@@ -1,0 +1,1 @@
+It's an application framework in C++, which mix some feature of Java & COM technology .
